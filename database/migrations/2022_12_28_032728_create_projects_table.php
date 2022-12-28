@@ -14,7 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('projects', function (Blueprint $table) {
-            $table->id();
+            $table->increments('project_id');
+            // $table->integer('city_id');
+            // $table->integer('company_id');
+            // $table->integer('user_id');
+            $table->string('name', 30);
+            $table->date('execution_date');
+            $table->tinyInteger('is_active')->default(1);
             $table->timestamps();
         });
     }
